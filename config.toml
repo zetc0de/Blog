@@ -30,7 +30,7 @@ pygmentsUseClasses=true
   [[menu.main]]
     name = "blog"
     pre = "<i class=\"fas fa-keyboard fa-ms\"></i>"
-    url = "/post"
+    url = "/blog/"
     weight = -8
   [[menu.main]]
     name = "tags"

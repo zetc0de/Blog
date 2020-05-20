@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Bug Bounty] RCE and XSS on Private Program Cyber Army ID"
+title: "[Bug Bounty] RCE and XSS On Private Program Cyber Army ID"
 date: 2019-02-14
-tags: bugbounty
+tags: BugBounty
 ---
 
 ### <b>Prolog</b>

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "How to install docker in Arch Linux"
+title: "How To Install Docker In Arch Linux"
 date: 2018-09-03
-categories: virtualization
+tags: Docker
 ---
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker.png?raw=true)
 

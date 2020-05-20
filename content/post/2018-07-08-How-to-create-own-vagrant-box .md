@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "How to create own vagrant box" 
+title: "How To Create Own Vagrant Box" 
 date: 2018-07-30
-categories: virtualization
+tags: Vagrant
 ---
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-05/vagrantbox.webp?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-05/vagrantbox.webp?raw=true)
 

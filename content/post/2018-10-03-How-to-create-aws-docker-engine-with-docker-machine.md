@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "How to create AWS Docker Engine with Docker Machine"
+title: "How to create AWS Docker Engine With Docker Machine"
 date: 2018-10-03
-categories: virtualization
+tags: Docker
 ---
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Docker-machine-aws/machine.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Docker-machine-aws/machine.png?raw=true)
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Ansible Provisioning With Vagrant" 
 date: 2018-07-26
-categories: virtualization
+tags: Vagrant
 ---
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/ansible-vagrant.jpg?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/ansible-vagrant.jpg?raw=true)
 

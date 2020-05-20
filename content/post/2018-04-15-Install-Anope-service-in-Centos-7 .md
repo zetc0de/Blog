@@ -2,7 +2,7 @@
 layout: post
 title: "How To Install Anope Service In Centos 7"
 date: 2018-04-15
-categories: anope
+tags: IRC
 ---
 <div align="center">
     <img src="http://www.anope.org/cpanel/static/logo.png">

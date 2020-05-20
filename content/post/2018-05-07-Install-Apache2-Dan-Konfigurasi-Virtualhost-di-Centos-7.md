@@ -2,7 +2,7 @@
 layout: post
 title: "How To Install Apache2 With Virtualhost Configuration In Centos 7"
 date: 2018-05-07
-categories: webserver
+tags: Webserver
 ---
 <div align="center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Apache_HTTP_server_logo_%282016%29.png">

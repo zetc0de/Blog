@@ -6,6 +6,6 @@ pinned: true
 ---
 *Welcome to my blog!* 
 
-Blog ini akan aku isi catatan-catatan kecilku selama belajar IT. Ini juga post pertmaku :)
+Blog ini akan aku isi catatan-catatan kecilku selama belajar IT. Ini juga post pertamaku :)
 
 

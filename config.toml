@@ -23,22 +23,22 @@ pygmentsUseClasses=true
 
 [menu]
   [[menu.main]]
-    name = "home"
+    name = "Home"
     pre = "<i class=\"fas fa-home fa-sm\"></i>"
     url = "/"
     weight = -9 
   [[menu.main]]
-    name = "blog"
+    name = "Articles"
     pre = "<i class=\"fas fa-keyboard fa-ms\"></i>"
     url = "/blog/"
     weight = -8
   [[menu.main]]
-    name = "tags"
+    name = "Tags"
     pre = "<i class=\"fas fa-tags fa-ms\"></i>"
     url = "/tags"
     weight = -7 
   [[menu.main]]
-    name = "github"
+    name = "Github"
     pre = "<i class=\"fab fa-github fa-ms\"></i>"
     url = "https://github.com/zetc0de"
     weight = -6 
@@ -47,8 +47,8 @@ pygmentsUseClasses=true
     pre = "<i class=\"fas fa-rss fa-ms\"></i>"
     url = "/index.xml"
     weight = -4 
-  [[menu.main]]
-    name = "contact"
-    pre = "<i class=\"far fa-envelope\"></i>"
-    url = "/contact"
-    weight = -1 
+#  [[menu.main]]
+#    name = "contact"
+#    pre = "<i class=\"far fa-envelope\"></i>"
+#    url = "/contact"
+#    weight = -1 

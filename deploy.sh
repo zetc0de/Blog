@@ -11,13 +11,13 @@ git push origin master
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+ln -sf ~/img ~/Blog/static
 # Genterate file statis
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # pindah ke direktoru publik
 cd public
 
-rm -rf img
 
 # tambahkan perubahan ke Git
 git add -A

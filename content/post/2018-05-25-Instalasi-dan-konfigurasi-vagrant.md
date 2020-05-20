@@ -2,7 +2,7 @@
 layout: post
 title: "Instalasi dan Konfigurasi Dasar Vagrant" 
 date: 2018-05-25 
-tags: Vagrant
+tags: [ "Vagrant" ]
 ---
 
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-01/900px-MediaWiki_Vagrant_Visualization.jpg?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-01/900px-MediaWiki_Vagrant_Visualization.jpg?raw=true)

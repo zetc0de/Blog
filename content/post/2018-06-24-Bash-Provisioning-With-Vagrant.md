@@ -2,7 +2,7 @@
 layout: post
 title: "Bash Provisioning With Vagrant" 
 date: 2018-06-24
-tags: Vagrant
+tags: [ "Vagrant","Bash","Provisioning" ]
 ---
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/bash.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/bash.png?raw=true)
 

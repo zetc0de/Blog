@@ -2,7 +2,7 @@
 layout: post
 title: "How To Install Unrealircd In Centos 7"
 date: 2018-04-15
-tags: IRC
+tags: [ "IRC","Unrealircd","Centos 7" ]
 ---
 
 <div align="center">

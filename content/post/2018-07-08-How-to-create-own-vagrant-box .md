@@ -2,7 +2,7 @@
 layout: post
 title: "How To Create Own Vagrant Box" 
 date: 2018-07-30
-tags: Vagrant
+tags: [ "Vagrant" ]
 ---
 ![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-05/vagrantbox.webp?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-05/vagrantbox.webp?raw=true)
 

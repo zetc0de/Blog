@@ -10,8 +10,8 @@ pygmentsUseClasses=true
 
 [params]
   author = "Mas Zet"
-  description = "your description"
-  keywords = "exploit security bugbounty"
+  description = "IT Security Enthusiast"
+  keywords = "Exploit | IT Security | Bug Bounty | HTB | Hacking | Pentest | Red Team"
   useAvatar = true
   microBlogSection = "posts"
   displayMicroBlog = true
@@ -19,7 +19,7 @@ pygmentsUseClasses=true
   recentMax = 5
   mail = "zetc0de.id@gmail.com"
   phone = "https://t.me/zetc0de"
-  formspreeID = "yourformspreeID"
+  formspreeID = "xrgyeopo"
 
 [menu]
   [[menu.main]]

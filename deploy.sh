@@ -19,7 +19,7 @@ cd public
 
 
 # tambahkan perubahan ke Git
-git add -A
+git add .
 
 # Buat sebuah commit baru
 msg="rebuilding site `date`"

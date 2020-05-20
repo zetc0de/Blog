@@ -4,9 +4,7 @@ title: "How To Install Anope Service In Centos 7"
 date: 2018-04-15
 tags: [ "IRC","Anope","Centos 7" ]
 ---
-<div align="center">
-    <img src="http://www.anope.org/cpanel/static/logo.png">
-</div>
+![Anope](/img/images/irc/anope/logo.png)
 
 Halo, kali ini kita akan menginstall Service Anope di OS Centos 7.
 Pertama, kita harus install Development Tools dulu dan beberapa tools yang diperlukan, 
@@ -22,10 +20,8 @@ Terus, kita extract dan masuk ke directory hasil extract tadi.
 > tar -zxvf anope* && cd anope*
 
 Lalu jalankan perintah `./extras` dan enable-kan `m_ssl_openssl.cpp` 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/images/m_ssl_openssl.cpp.png">
-</div>
 
+![Open SSL](/img/images/irc/anope/m_ssl_openssl.cpp.png)
 
 Terus `./Config` dan install anope nya menggunkan user biasa/bukan root.
 > ./Config
@@ -43,7 +39,8 @@ Buat file konfigurasi Anopenya _kita pake file examplenya_
 Lalu edit file konfiurasi tadi sesuai kebutuhan. Untuk contoh, bisa lihat file konfigurasi milik saya disini [services.conf](https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/files/services.conf), kebetulan untuk aplikasi IRC yg saya gunakan adalah Unrealircd.
 
 ``Note:`` Edit juga bagian konfigurasi link `unrealircd.conf`, sesuaikan dengan konfigurasi uplink di `services.conf`:
-{% highlight ruby %}
+
+```
 link services.mynet.org
 {
     incoming {
@@ -54,12 +51,12 @@ link services.mynet.org
 
     class servers;
 };
-{% endhighlight ruby %}
+```
 
 Serverinfo juga disesuaikan :
 
-{% highlight ruby %}
-serverinfo
+
+```serverinfo
 {
     /*
      * The hostname that Services will be seen as, it must have no conflicts with any
@@ -67,15 +64,13 @@ serverinfo
      * to be an existing hostname, just one that isn't on your network already.
      */
     name = "127.0.0.1"
+```
 
-{% endhighlight ruby %}
 
 Kalau sudah beres konfigurasi, jalankan dengan perintah 
 > ./services/bin/anoperc start
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/images/start.png">
-</div>
+![Start Anope](/img/images/irc/anope/start.png)
 
 Sampai disini service Anope siap digunakan, sekian dan terimakasih.
 

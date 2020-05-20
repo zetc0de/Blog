@@ -16,6 +16,9 @@ hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # pindah ke direktoru publik
 cd public
+
+rm -rf img
+
 # tambahkan perubahan ke Git
 git add -A
 

@@ -5,10 +5,7 @@ date: 2018-04-15
 tags: [ "IRC","Unrealircd","Centos 7" ]
 ---
 
-<div align="center">
-    <img src="https://i.ytimg.com/vi/hzJJjLBsaDs/hqdefault.jpg">
-</div>
-
+![IRC](/img/images/irc/unrealircd/logo.jpg)
 Halo, kali ini kita akan menginstall Unrealircd di OS Centos 7. **Apa itu Unrelircd** ?
 
 **UnrealIRCd** adalah daemon IRC open source, awalnya berbasis pada DreamForge, dan tersedia untuk sistem operasi Unix-like dan Windows. Sejak awal pengembangan pada UnrealIRCd c. Mei 1999, banyak fitur baru yang ditambahkan dan dimodifikasi, termasuk fitur keamanan yang canggih dan perbaikan bug, dan Unrealircd menjadi server yang populer.

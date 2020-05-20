@@ -33,7 +33,7 @@ Seletah berhasil diinstall, maka directory anope sekarang ada di home directory 
 
 > vim ~/services/conf/modules.example.conf
 
-Buat file konfigurasi Anopenya _kita pake file examplenya_
+Buat file konfigurasi Anopenya, *kita pake file examplenya*
 > cp ~/services/conf/example.conf ~/services/conf/services.conf
 
 Lalu edit file konfiurasi tadi sesuai kebutuhan. Untuk contoh, bisa lihat file konfigurasi milik saya disini [services.conf](https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/files/services.conf), kebetulan untuk aplikasi IRC yg saya gunakan adalah Unrealircd.

@@ -4,11 +4,9 @@ title: "How To Install Apache2 With Virtualhost Configuration In Centos 7"
 date: 2018-05-07
 tags: [ "Web Server","Apache2","Centos 7" ]
 ---
-<div align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Apache_HTTP_server_logo_%282016%29.png">
-</div>
+![Apache Logo](/images/apache2/logo.png)
 
-<h3><b>#Introduction</b></h3>
+## Introduction
 
 Server HTTP Apache atau Server Web/WWW Apache adalah server web yang dapat dijalankan di banyak sistem operasi (Unix, BSD, Linux, Microsoft Windows dan Novell Netware serta platform lainnya) yang berguna untuk melayani dan memfungsikan situs web. Protokol yang digunakan untuk melayani fasilitas web/www ini menggunakan HTTP.
 
@@ -17,7 +15,7 @@ Apache memiliki fitur-fitur canggih seperti pesan kesalahan yang dapat dikonfigu
 Apache merupakan perangkat lunak sumber terbuka dikembangkan oleh komunitas terbuka yang terdiri dari pengembang-pengembang di bawah naungan [Apache Software Foundation](https://id.wikipedia.org/wiki/Apache_Software_Foundation).
 
 
-<h3><b>#Installation </b></h3>
+## Installation
 
 `Rencananya saya akan menginstall webapp pada subdomain blog.serverku.com`
 
@@ -28,10 +26,8 @@ Jika istallasi selesai, konfigurasi sistem anda agar menjalankan service apache2
 > systemctl start httpd
 > systemctl enable httpd
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/apache2/enable.png">
-</div>
 
+![Apache Enable](/images/apache2/enable.png)
 
 Pada Centos7 saya menggunakan Firewalld, sehinggak kita harus mengatur agar membolehkan koneksi dari luar ke port 80(http) dan 443(https):
 
@@ -41,16 +37,12 @@ Pada Centos7 saya menggunakan Firewalld, sehinggak kita harus mengatur agar memb
 > 
 > firewall-cmd --reload
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/apache2/firewall.png">
-</div>
 
-
+![Firewall](/images/apache2/firewall.png)
 
 Sampai saat ini kita bisa akses server kita di web browser.
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/apache2/akses%20ip.png">
-</div>
+
+![Akses](/images/apache2/aksesip.png)
 
 
 Karena saya ingin mengakses webapp nya pada alamat blog.serverku.com, maka buat virtualhost yang mengarahkan kealamat tersebut.
@@ -64,7 +56,7 @@ Sekarang kita punya struktur directory untuk file kita, tapi owner nya masih roo
 > chmod -R 755 /var/www
 
 
-<h3><b>#Buat Virtualhost </b></h3>
+## Membuat Virtualhost
 
 Untuk memulai, kita perlu mengatur directory tempat virtualhost kita akan disimpan,serta directory yang akan memberi tahu apache bahwa virtualhost siap melayani pengunjung. Directori `sites-available` akan menyimpan semua file konfigurasi virtualhost, sementara directory `sites-enable` akan menyimpan tautan simbolic ke host virtual yang ingin kita publikasikan, dalam kasus ini kita akan mempublikasikan host blog.serverku.com.
 
@@ -80,12 +72,12 @@ Dan berikan baris perintah berikut pada baris terakhir:
 `IncludeOptional sites-enabled/*.conf`
 
 
-<h3><b>#Konfigurasi Virtualhost </b></h3>
+## Konfigurasi Virtualhost
 
 Buat file konfigurasinya :
 > nano /etc/httpd/sites-available/blog.serverku.conf
 
-{% highlight ruby %}
+```
 <VirtualHost *:80>
      ServerAdmin havidzc0de@gmail.com
      DocumentRoot /var/www/blog.serverku.com/public_html
@@ -93,7 +85,7 @@ Buat file konfigurasinya :
      ErrorLog /var/log/httpd/blog.serverku.com_error.log
      CustomLog /var/log/httpd/blog.serverku.com_requests.log combine
 </VirtualHost>
-{% endhighlight ruby%}
+```
 
 Jika sudah, sekarang aktifkan virtualhost tersebut:
 
@@ -102,7 +94,7 @@ Jika sudah, sekarang aktifkan virtualhost tersebut:
 Sekarang kita coba buat file html di dalam documentroot kita:
 > nano var/www/blog.serverku.com/public_html/index.html
 
-{% highlight ruby %}
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,15 +108,12 @@ Sekarang kita coba buat file html di dalam documentroot kita:
 </div>
 </body>
 </html>
-{% endhighlight ruby%}
+```
 
 Restart apache:
 > systemctl restart httpd
 
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/apache2/finish.png">
-</div>
-
+![Finish](/images/apache2/finish.png)
 
 Sekian

@@ -4,7 +4,7 @@ title: "How To Install Anope Service In Centos 7"
 date: 2018-04-15
 tags: [ "IRC","Anope","Centos 7" ]
 ---
-![Anope](/img/images/irc/anope/logo.png)
+![Anope](/images/irc/anope/logo.png)
 
 Halo, kali ini kita akan menginstall Service Anope di OS Centos 7.
 Pertama, kita harus install Development Tools dulu dan beberapa tools yang diperlukan, 
@@ -21,7 +21,7 @@ Terus, kita extract dan masuk ke directory hasil extract tadi.
 
 Lalu jalankan perintah `./extras` dan enable-kan `m_ssl_openssl.cpp` 
 
-![Open SSL](/img/images/irc/anope/m_ssl_openssl.cpp.png)
+![Open SSL](/images/irc/anope/m_ssl_openssl.cpp.png)
 
 Terus `./Config` dan install anope nya menggunkan user biasa/bukan root.
 > ./Config
@@ -36,7 +36,7 @@ Seletah berhasil diinstall, maka directory anope sekarang ada di home directory 
 Buat file konfigurasi Anopenya, *kita pake file examplenya*
 > cp ~/services/conf/example.conf ~/services/conf/services.conf
 
-Lalu edit file konfiurasi tadi sesuai kebutuhan. Untuk contoh, bisa lihat file konfigurasi milik saya disini [services.conf](https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/files/services.conf), kebetulan untuk aplikasi IRC yg saya gunakan adalah Unrealircd.
+Lalu edit file konfiurasi tadi sesuai kebutuhan. Untuk contoh, bisa lihat file konfigurasi milik saya disini [services.conf](/files/services.conf), kebetulan untuk aplikasi IRC yg saya gunakan adalah Unrealircd.
 
 ``Note:`` Edit juga bagian konfigurasi link `unrealircd.conf`, sesuaikan dengan konfigurasi uplink di `services.conf`:
 
@@ -70,7 +70,7 @@ Serverinfo juga disesuaikan :
 Kalau sudah beres konfigurasi, jalankan dengan perintah 
 > ./services/bin/anoperc start
 
-![Start Anope](/img/images/irc/anope/start.png)
+![Start Anope](/images/irc/anope/start.png)
 
 Sampai disini service Anope siap digunakan, sekian dan terimakasih.
 

@@ -5,15 +5,13 @@ date: 2018-04-15
 tags: [ "OpenVPN","Centos 7" ]
 ---
 
-<div align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Ovpntech_logo-s_REVISED.png">
-</div>
+![OpenVPN Logo](/images/openvpn/logo.png)
 
-<h3><b>#Introduction</b></h3>
+## Introduction
 
 OpenVPN adalah aplikasi perangkat lunak open-source yang mengimplementasikan teknik virtual private network [(VPN)](https://en.wikipedia.org/wiki/Virtual_private_network) untuk membuat koneksi point-to-point atau site-to-site yang aman dalam konfigurasi yang diarahkan atau dijembatani dan fasilitas akses jarak jauh. Ini menggunakan protokol keamanan khusus [9] yang memanfaatkan [SSL / TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) untuk pertukaran kunci. OpenVPN mampu melintasi [network address translators](https://en.wikipedia.org/wiki/Network_address_translator) (NAT) dan [firewall](https://en.wikipedia.org/wiki/Firewall_(computing)). OpenVPN ditulis oleh James Yonan dan diterbitkan di bawah GNU General Public License (GPL). 
 
-<h3><b>#Step by step</b></h3>
+## Installation Step
 
 - Enable the epel-repository in CentOS.
 - Install openvpn and easy-rsa.
@@ -24,34 +22,27 @@ OpenVPN adalah aplikasi perangkat lunak open-source yang mengimplementasikan tek
 - Start openVPN Server.
 - Setting up the OpenVPN client application.
 
-<h3><b>#Enable the epel-repository in CentOS.</b></h3>
-```
-yum install epel-release
-```
+### Enable the epel-repository in CentOS
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/zetc0de/zetc0de.github.io/master/assets/images/openvpn/1.png">
-</div>
+    yum install epel-release
 
-<h3><b>#Install openvpn and easy-rsa.</b></h3>
-```
-yum -y install openvpn easy-rsa 
-```
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/zetc0de/zetc0de.github.io/master/assets/images/openvpn/2.png">
-</div>
+![](/images/openvpn/1.png)
 
-<h3><b>#Create Vars Variables</b></h3>
-```
-cp -R /usr/share/easy-rsa/ /etc/openvpn/
-cd /etc/openvpn/easy-rsa/3/
-vim vars
-```
+### Install openvpn and easy-rsa
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/zetc0de/zetc0de.github.io/master/assets/images/openvpn/3.png">
-</div>
+    yum -y install openvpn easy-rsa 
+
+![](/images/openvpn/2.png)
+
+### Create Vars Variables
+
+    cp -R /usr/share/easy-rsa/ /etc/openvpn/
+    cd /etc/openvpn/easy-rsa/3/
+    vim vars
+
+
+![](/images/openvpn/3.png)
 
 ```
 set_var EASYRSA                 "$PWD"
@@ -74,76 +65,70 @@ set_var EASYRSA_SSL_CONF        "$EASYRSA/openssl-1.0.cnf"
 set_var EASYRSA_DIGEST          "sha256"
 ```
 
-```
-chmod +x vars
-```
 
-<h3><b>#Configure easy-rsa.</b></h3>
+    chmod +x vars
 
-<h5><b>- Initialization</b></h5>
-```
-./easyrsa init-pki
-```
 
-<h5><b>- Build ca</b></h5>
-```
-./easyrsa build-ca nopass
-```
+### Configure easy-rsa
 
-<h5><b>- Generate dh</b></h5>
-```
-./easyrsa gen-dh
-```
+#### Initialization
 
-<h5><b>- Generate and Sign Server Key</b></h5>
-```
-./easyrsa gen-req zetc0de-openvpn nopass
-./easyrsa sign-req server zetc0de-openvpn
-```
+    ./easyrsa init-pki
 
-<h5><b>- Generate and Sign Client Key</b></h5>
-```
-./easyrsa gen-req client nopass
-./easyrsa sign-req client client
-```
 
-<h5><b>- Generate crl</b></h5>
-```
-./easyrsa gen-crl
-```
+#### Build ca
 
-<h5><b>- Copy Server Certificate</b></h5>
+    ./easyrsa build-ca nopass
 
-```
-cp pki/ca.crt /etc/openvpn/server/
-cp pki/issued/zetc0de-openvpn.crt /etc/openvpn/server/
-cp pki/private/zetc0de-openvpn.key /etc/openvpn/server/
-```
 
-<h5><b>- Copy crl and dh certificate</b></h5>
-```
-cp pki/dh.pem /etc/openvpn/server/
-cp pki/crl.pem /etc/openvpn/server/
-```
+#### Generate dh
 
-<h5><b>- Copy Client Certificate</b></h5>
-```
-cp pki/ca.crt /etc/openvpn/client/
-cp pki/issued/client.crt /etc/openvpn/client/
-cp pki/private/client.key /etc/openvpn/client/
-```
+    ./easyrsa gen-dh
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/zetc0de/zetc0de.github.io/master/assets/images/openvpn/4.png">
-</div>
 
-<h3><b>#Configure openvpn</b></h3>
+#### Generate and Sign Server Key
 
-<h5><b>Server Config</b></h5>
-```
-cd /etc/openvpn/
-vim server.conf
-```
+    ./easyrsa gen-req zetc0de-openvpn nopass
+    ./easyrsa sign-req server zetc0de-openvpn
+
+
+#### Generate and Sign Client Key
+
+    ./easyrsa gen-req client nopass
+    ./easyrsa sign-req client client
+
+
+#### Generate crl
+
+    ./easyrsa gen-crl
+
+
+#### Copy Server Certificate
+
+    cp pki/ca.crt /etc/openvpn/server/
+    cp pki/issued/zetc0de-openvpn.crt /etc/openvpn/server/
+    cp pki/private/zetc0de-openvpn.key /etc/openvpn/server/
+
+#### Copy crl and dh certificate
+
+    cp pki/dh.pem /etc/openvpn/server/
+    cp pki/crl.pem /etc/openvpn/server/
+
+
+#### Copy Client Certificate
+
+    cp pki/ca.crt /etc/openvpn/client/
+    cp pki/issued/client.crt /etc/openvpn/client/
+    cp pki/private/client.key /etc/openvpn/client/
+
+![](/images/openvpn/4.png)
+
+## Configure openvpn
+
+### Server Config
+
+    cd /etc/openvpn/
+    vim server.conf
 
 ```
 #change with your port
@@ -207,72 +192,66 @@ log-append /var/log/openvpn.log
 verb 3
 ```
 
-<h3><b>#Configure Firewalld and Enable Port Forwarding</b></h3>
+## Configure Firewalld and Enable Port Forwarding
 
-<h5><b>- Firewalld Configuration</b></h5>
-```
-firewall-cmd --permanent --add-service openvpn
-firewall-cmd --permanent --zone=trusted --add-interface=tun0
-firewall-cmd --permanent --zone=trusted --add-masquerade
-DEV=$(ip route get 8.8.8.8 | awk 'NR==1 {print $(NF-2)}')
-firewall-cmd --permanent --direct --passthrough ipv4 -t nat -A POSTROUTING -s  192.168.200.0/24 -o $DEV -j MASQUERADE
-firewall-cmd --reload
-```
+### Firewalld Configuration
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/zetc0de/zetc0de.github.io/master/assets/images/openvpn/5.png">
-</div>
+    firewall-cmd --permanent --add-service openvpn
+    firewall-cmd --permanent --zone=trusted --add-interface=tun0
+    firewall-cmd --permanent --zone=trusted --add-masquerade
+    DEV=$(ip route get 8.8.8.8 | awk 'NR==1 {print $(NF-2)}')
+    firewall-cmd --permanent --direct --passthrough ipv4 -t nat -A POSTROUTING -s  192.168.200.0/24 -o $DEV -j MASQUERADE
+    firewall-cmd --reload
 
-```
-cd /lib/firewalld/services/
-vim openvpn.xml
-```
+![](/images/openvpn/5.png)
 
-```
-Change Default Port
-```
 
-<h5><b>- Enable Port Forward </b></h5>
-```
-vim /etc/sysctl.conf
-```
+    cd /lib/firewalld/services/
+    vim openvpn.xml
+
+
+### Change Default Port
+
+
+### Enable Port Forward
+
+    vim /etc/sysctl.conf
+
 
 ```
 net.ipv4.ip_forward = 1
 ```
 
-<h5><b>- Disable SELinux</b></h5>
-```
+### Disable SELinux
+
 vim /etc/sysconfig/selinux
-```
+
 
 ```
 SELINUX=disabled
 ```
 
-```
-sysctl -p
-systemctl restart openvpn@server
-systemctl enable openvpn@server
-```
+
+    sysctl -p
+    systemctl restart openvpn@server
+    systemctl enable openvpn@server
 
 
-<h3><b>#Start openVPN Server.</b></h3>
-```
-systemctl start openvpn@server
-```
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/zetc0de/zetc0de.github.io/master/assets/images/openvpn/6.png">
-</div>
+### Start openVPN Server
 
-<h3><b>#SettingUp The OpenVPN Client Application</b></h3>
+    systemctl start openvpn@server
 
-<h5><b>- Client Configuraition</b></h5>
-```
-cd /etc/openvpn/client/
-vim zetc0de.ovpn
-```
+
+![](/images/openvpn/6.png)
+
+## SettingUp The OpenVPN Client Application
+
+### Client Configuraition 
+
+    cd /etc/openvpn/client/
+    vim zetc0de.ovpn
+
 
 ```
 client
@@ -301,17 +280,17 @@ tls-version-min 1.2
 tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-128-CBC-SHA256
 ```
 
-```
-cd /etc/openvpn/
-tar -czf zetc0de.tar.gz client/*
-```
 
-```
-mv zetc0de.tar.gz /home/lightmoon/
-chown -R lightmoon:lightmoon /home/lightmoon/
-```
+    cd /etc/openvpn/
+    tar -czf zetc0de.tar.gz client/*
 
-<h5><b>- Download Client</b></h5>
-```
-scp -P 4053 -i Keys/1/satu lightmoon@37.59.x.x:~/zetc0de.tar.gz .
-```
+
+
+    mv zetc0de.tar.gz /home/lightmoon/
+    chown -R lightmoon:lightmoon /home/lightmoon/
+
+
+### Download Client
+
+    scp -P 4053 -i Keys/1/satu lightmoon@37.59.x.x:~/zetc0de.tar.gz .
+

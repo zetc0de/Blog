@@ -4,13 +4,14 @@ title: "Bash Provisioning With Vagrant"
 date: 2018-06-24
 tags: [ "Vagrant","Bash","Provisioning" ]
 ---
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/bash.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/bash.png?raw=true)
-
+![](/images/vagrant03/bash.png)
+## Introduction
 Sebagai DevOps, kita tidak terlepas dengan yang namanya **Provisioning**, saya tidak akan menjelaskan lebih detail makna provisioning itu sendiri, tapi disini kita akan mencoba bash provisioning pada Virtual Mechine menggunakan Vagrant. Langsung saja, siapkan 1 vm atau lebih mengguanan vagrant. 
-```
-mkdir -p ~/Vagrant/vagrant-provbash
-cd ~/Vagrant/vagrant-provbash
-```
+
+    mkdir -p ~/Vagrant/vagrant-provbash
+    cd ~/Vagrant/vagrant-provbash
+
+## Vagrant File
 Lalu buatlah sebuah vagrantfile dengan config:
 ```
 # Inisialisasi Vagrantfile configuration
@@ -40,7 +41,9 @@ end
 - Port fordward ke host 3000.
 - Anda dapat menambah vm sendiri, tinggal copas config yg ada dengan nama vm yg berbeda, misal vm02,vm03,dst.
 
+## Provisioning LAMP STACK
 Pada case kali ini kita akan coba provisioning LAMP STACK menggunakan bash. Buatlah file `lamp.sh` pada directory yg sama, isikan script berikut:
+
 ```
 #!/bin/bash
 
@@ -63,6 +66,7 @@ echo -e "-------------------------------"
 echo -e "-[ https://zetc0de.github.io ]-"
 echo -e "-------------------------------"
 ```
+
 Jangan lupa untuk memberi hak akses execute pada filenya :
 ```
 chmod +x lamp.sh
@@ -76,13 +80,16 @@ Kemudian saatnya provisioning, gunakan perintah:
 ```
 vagrant provisioning vm01
 ```
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/vagrant%20prov.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/vagrant%20prov.png?raw=true)
+
+![](/images/vagrant03/vagrantpro.png)
 
 Maka akan terlihat proses provisioning vm01 dengan script bash. Dengan provisioning kita dimudahkan untuk mensetup banyak server dengan sekali kerja. Bayangkan jika anda diminta untuk mensetup 1000 server? Menarik bukan? :)
 
+## Result
+
 Anda dapat melihat hasil dari provisioning tadi dengan mengakses 127.0.0.1:3000 di browser anda. 
 
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/result.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/Vagrant-03/result.png?raw=true)
+![](/images/vagrant03/result.png)
 
 Terlihat apache,mysql,dan php-fpm kita sudah dalam kondisi running. :)
 

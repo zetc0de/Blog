@@ -4,9 +4,17 @@ title: "Ansible Provisioning With Vagrant"
 date: 2018-07-26
 tags: [ "Vagrant","Ansible","Provisioning" ]
 ---
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/ansible-vagrant.jpg?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/ansible-vagrant.jpg?raw=true)
+![](/images/vagrant04/ansible.png)
 
-Melanjutkan belajar provisioning menggunakan Vagrant, mulailah dengan memuat vagrantfile:
+## Introduction
+
+Setelah sebelumnya kita belajar bagaimana melakukan [Bash Provisioning Dengan Vagrant](http://localhost:1313/post/2018-06-24-bash-provisioning-with-vagrant/), sekarang kita akan melanjutkan belajar provisioning menggunakan ansible.
+
+Ansible adalah sebuah provisioning tool yang dikembangkan oleh RedHat. Dimana kamu dapat mencatat setiap proses deployment ataupun konfigurasi yang biasa dilakukan berulang - ulang terhadap beberapa server.
+
+## Create Vagrantfile
+Mulailah dengan memuat vagrantfile:
+
 ```
   config.vm.define "vm02" do |vm02|
       vm02.vm.box = "ubuntu/xenial64"
@@ -22,6 +30,7 @@ Melanjutkan belajar provisioning menggunakan Vagrant, mulailah dengan memuat vag
       end
   end
 ```
+
 **Penjelasan :**
 - vm02 : Nama vm kita
 - vm02.vm.box : Menggunakan box ubuntu/xenial64
@@ -29,15 +38,18 @@ Melanjutkan belajar provisioning menggunakan Vagrant, mulailah dengan memuat vag
 - vm02.vm.network : Setting network dengan ip private dan prot forwarding.
 - vm02.vm.provision : Provisioning menggunakna ansible.
 
-Download file provisioning ansible [disini](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/files/provision.zip?raw=true), lalu extrak dan letakkan pada directory yang sama dengan vagrantfiile. Kemudian jalankan vm02 dengan perintah `vagrant up`.
+Download file provisioning ansible [disini](/files/provision.zip), lalu extrak dan letakkan pada directory yang sama dengan vagrantfiile, kemudian jalankan vm02 dengan perintah `vagrant up`.
 
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/cek%20status.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/cek%20status.png?raw=true)
+![](/images/vagrant04/cek.png)
 
+## Provisioning 
 Pastikan vm02 dalam kondisi running, untuk provisioning kali ini kita akan coba install webserver apache dan build web dengan jinja2, silahkan oprek ansiblenya dan disesuaikan dengan kebutuhan. Untuk membuktikan hasil proovisioningnya, editlah variable nama pada file `provision/roles/apache/vars/main.yml` dengan nama anda. Untuk menjalankan provisioningnya gunakan perintah:
-```
-vagrant provision vm02
-``` 
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/provisioning.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/provisioning.png?raw=true)
+
+    vagrant provision vm02
+ 
+
+![](/images/vagrant04/provisioning.png)
 
 Dari provisioning diatas kita akan mendapatkan result sebagai berikut:
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/result.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/vagrant-04/result.png?raw=true)
+
+![](/images/vagrant04/result.png)

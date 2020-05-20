@@ -4,17 +4,13 @@ title: "How To Install Docker In Arch Linux"
 date: 2018-09-03
 tags: [ "Docker" ]
 ---
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker.png?raw=true)
-
+![](/images/docker01/docker.png)
 ## Introduction
 
 Docker adalah salah satu platform yang dibangun berdasarkan teknologi container. Docker merupakan sebuah project open-source yang menyediakan platform terbuka untuk developer maupun sysadmin untuk membangun,mengemas,dan menjalankan aplikasi dimanapun sebagai sebuah wadah(container) yang ringan. Dengan sangat populernya docker, sebagian orang sering menganggap docker adalah sebutan lain dari container. (codepolitan)
 
-## Installasi
-- Enable the loop module
-- Install docker
-- Start and Enable Docker
-- Using docker on Arch Linux
+## Instalasi
+Dikarenakan saya menggunakan OS Arch Linux, maka disini saya akan menyajikan langkah-langkah ketika ingin menginstall docker di OS Arch Linux, anda dapat menyesuaikan dengan OS masing-masing.
 
 ### Enable The Loop Module
 Cek module loop:
@@ -35,19 +31,22 @@ Anda dapat menginstall docker melalui repository comunity (AUR), biasanya bernam
 ```
 sudo pacman -S docker
 ```
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/install.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/install.png?raw=true)
 
-### Start Docker
+![](/images/docker01/install.png)
+
+## Start Docker
 Sebelum memulai docker, anda harus start service docker terlebih dahulu, dan pastikan docker dalam kondisi running:
 ```
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl status docker
 ```
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/status%20docker.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/status%20docker.png?raw=true)
+
+![](/images/docker01/status.png)
 
 Jika sudah running, kita coba jalankan `docker info` dan didapatkan:
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20info.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20info.png?raw=true)
+
+![](/images/docker01/info.png)
 
 Artinya docker hanya dapat berjalan dalam kondisi root. Untuk menjalankan docker dalam mode user biasa. maka kita harus menambahkan user tersebut kedalam docker group:
 ```
@@ -55,14 +54,16 @@ sudo su
 gpasswd -a user docker
 ```
 `Note: user diganti dengan username anda`
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20group.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20group.png?raw=true)
+
+![](/images/docker01/group.png)
 
 Jangan lupa untuk re-login untuk apply perubahan.
 
 Maka ketika kita akses `docker info` dengan user biasa akan mendapatkan result seperti ini:
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20info2.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20info2.png?raw=true)
 
-### Using docker on Arch Linux
+![](/images/docker01/info2.png)
+
+## Testing docker on Arch Linux
 Coobalah dengan menjalankan perintah-perintah docker, anda dapat melihatnya dengan perintah:
 ```
 docker -h
@@ -71,15 +72,16 @@ Akan ada banyak command docker, salah satunya adalah `docker pull`, docker pull 
 ```
 docker pull ubuntu:18.04
 ```
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20pull.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20pull.png?raw=true)
 
-Perintah diatas akan mendownload images ubuntu dengan tag 18.04, anda dapat melihat berbagai images di [https://hub.docker.com](Docker Hub).
+![](/images/docker01/pull.png)
+
+Perintah diatas akan mendownload images ubuntu dengan tag 18.04, anda dapat melihat berbagai images di [Docker Hub](https://hub.docker.com).
 
 Untuk melihat semua images yang kita miliki, gunakan perintah:
 ```
 docker images
 ```
-![https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20images.png?raw=true](https://github.com/zetc0de/zetc0de.github.io/blob/master/assets/images/docker-01/docker%20images.png?raw=true)
 
+![](/images/docker01/images.png)
 
 

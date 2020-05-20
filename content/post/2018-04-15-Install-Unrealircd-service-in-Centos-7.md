@@ -5,11 +5,14 @@ date: 2018-04-15
 tags: [ "IRC","Unrealircd","Centos 7" ]
 ---
 
-![IRC](/img/images/irc/unrealircd/logo.jpg)
-Halo, kali ini kita akan menginstall Unrealircd di OS Centos 7. **Apa itu Unrelircd** ?
+![IRC](/images/irc/unrealircd/logo.jpg)
 
+Halo, kali ini kita akan menginstall Unrealircd di OS Centos 7. 
+
+## Introduction
 **UnrealIRCd** adalah daemon IRC open source, awalnya berbasis pada DreamForge, dan tersedia untuk sistem operasi Unix-like dan Windows. Sejak awal pengembangan pada UnrealIRCd c. Mei 1999, banyak fitur baru yang ditambahkan dan dimodifikasi, termasuk fitur keamanan yang canggih dan perbaikan bug, dan Unrealircd menjadi server yang populer.
 
+## Installation
 Oke langsung saja,seperti biasa kita harus install Development Tools dulu dan beberapa tools yang diperlukan, 
 
 > yum group install "Development Tools"
@@ -38,24 +41,28 @@ Salin file example konfigurasi ke `~/unrealircd/conf/`
 >
 
 Kemudian konfigurasi file unrealircd.conf sesuai kebutuhan, aku konfig bagian-bagian dibawah ini :
-{% highlight ruby %}
+```
  59 me {
  60         name "irc.random.io";
  61         info "IRC RANDOM";
  62         sid "001";
+```
 
+```
  68 admin {
- 69         "havidzc0de";
- 70         "havidzc0de";
- 71         "havidzc0de@gmail.com";
+ 69         "zetc0de";
+ 70         "zetc0de";
+ 71         "zetc0de@gmail.com";
+```
 
-
-
-144 oper havidzc0de {
+```
+144 oper zetc0de {
 145         class opers;
 146         mask *@*;
 147         password "passwordkamu";
+```
 
+```
 173 /* Standard IRC port 6667 */
 174 listen {
 175         ip *;
@@ -75,31 +82,33 @@ Kemudian konfigurasi file unrealircd.conf sesuai kebutuhan, aku konfig bagian-ba
 189         port 6900; /*port untuk konekin ke service Anope*/
 190         options { ssl; serversonly; };
 191 };
+```
 
-
+```
 376 /* Network configuration */
 377 set {
 378         network-name            "RANDOM";
 379         default-server          "irc.random.io";
 380         services-server         "services.random.io";
 381         stats-server            "stats.random.io";
+```
 
+```
 393         cloak-keys {
 394                "YeK47v7oa4IYH1e64y14QW6Vx6ALN4GP1p0DFlQ8CGWCe0K6jyo3cCw";
 395                "3C5scCBJPDkLYSC1PID1IUjo3344K8W8p1u04Dm2X5JnP5D04JevE6OH5";
 396                "dubhE01QGEOlm317i836vLme6Wcov3MI71G43iM7w2I6t12f7N";
+```
 
-
-
+```
 402 set {
-403         kline-address "havidzc0de@gmail.com"; /* e-mail or URL shown when a use    r is banned */
+403         kline-address "zetc0de.id@gmail.com"; /* e-mail or URL shown when a use    r is banned */
 
-{% endhighlight ruby %}
+```
 Untuk gencloak bisa menggunakan perintah ini:
 > ./unrealircd gencloak
-> 
 
-Anda dapat melihat full file konfigurasinya [disini](https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/files/unrealircd.conf)
+Anda dapat melihat full file konfigurasinya [disini](/files/unrealircd.conf)
 
 Sebelum kita jalankan Unrealircd nya, kita buka port sesuai port di konfigurasi `listening` nya:
 
@@ -113,9 +122,5 @@ Sebelum kita jalankan Unrealircd nya, kita buka port sesuai port di konfigurasi 
 Lalu kita start 
 > ./unrealircd start
 > 
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/havidzc0de/havidzc0de.github.io/master/assets/images/start-unreal.png">
-</div>
 
 ~Sekian

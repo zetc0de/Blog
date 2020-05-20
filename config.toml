@@ -4,7 +4,7 @@ languageCode = "id-id"
 defaultContentLanguage = "id"
 
 
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+copyright = "Copyright © 2020, zetc0de and the Hugo Authors; all rights reserved."
 theme = "npq-hugo"
 pygmentsUseClasses=true
 
@@ -16,7 +16,7 @@ pygmentsUseClasses=true
   microBlogSection = "posts"
   displayMicroBlog = true
   displayRecent = true
-  recentMax = 5
+  recentMax = 4
   mail = "zetc0de.id@gmail.com"
   phone = "https://t.me/zetc0de"
   formspreeID = "xrgyeopo"
